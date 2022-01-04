@@ -11,7 +11,7 @@ export default function Home({_data}) {
   const [isOpen, setOpen] = useState(false);
 
   const refresh = () => {
-    axios.get(`http://localhost:3000/api/notes`)
+    axios.get(`https://notes-69czc4h2i-ifty64bit.vercel.app/api/notes`)
         .then((res) => {
           //console.log(res);
           setData(res.data)
@@ -29,7 +29,7 @@ export default function Home({_data}) {
   }
 
   const del = (id) => {
-    axios.delete(`http://localhost:3000/api/notes`, { data: { id }})
+    axios.delete(`https://notes-69czc4h2i-ifty64bit.vercel.app/api/notes`, { data: { id }})
         .then((res) => {
           refresh();
         })
@@ -65,7 +65,7 @@ export default function Home({_data}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/notes`)
+  const res = await fetch(`https://notes-69czc4h2i-ifty64bit.vercel.app/api/notes`)
   const data = await res.json()
 
   // Pass data to the page via props
