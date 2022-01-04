@@ -11,7 +11,7 @@ export default function Home({_data}) {
   const [isOpen, setOpen] = useState(false);
 
   const refresh = () => {
-    axios.get(`${process.env.URL}/api/notes`)
+    axios.get(`http://${process.env.NEXT_PUBLIC_SITE_URL}/api/notes`)
         .then((res) => {
           //console.log(res);
           setData(res.data)
@@ -29,7 +29,7 @@ export default function Home({_data}) {
   }
 
   const del = (id) => {
-    axios.delete(`${process.env.URL}/api/notes`, { data: { id }})
+    axios.delete(`http://${process.env.NEXT_PUBLIC_SITE_URL}/api/notes`, { data: { id }})
         .then((res) => {
           refresh();
         })
@@ -65,7 +65,7 @@ export default function Home({_data}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${process.env.URL}/api/notes`)
+  const res = await fetch(`http://${process.env.NEXT_PUBLIC_SITE_URL}/api/notes`)
   const data = await res.json()
 
   // Pass data to the page via props
