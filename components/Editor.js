@@ -23,7 +23,7 @@ function Editor({data, openEditor}) {
     const save = () => {
         if (data)
         {
-            axios.patch(`http://${process.env.NEXT_PUBLIC_SITE_URL}/api/notes`, { title, note, id:data.id })
+            axios.patch('/api/notes', { title, note, id:data.id })
             .then((res) =>
             {
                 if (res.data === "Error Updating Notes")
@@ -38,7 +38,7 @@ function Editor({data, openEditor}) {
             .catch((err) => console.log(err))
         }
         else {
-            axios.post(`http://${process.env.NEXT_PUBLIC_SITE_URL}/api/notes`, { title, note })
+            axios.post(`/api/notes`, { title, note })
             .then((res) =>
             {
                 if (res.data === "Error Saving Notes")
