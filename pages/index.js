@@ -39,7 +39,7 @@ export default function Home({_data}) {
   
 
   return (
-    <div className="mx-12 mt-4 flex flex-wrap">
+    <div className="mx-1 mt-1 sm:mx-12 sm:mt-4 flex flex-wrap gap-2 justify-center">
       {
         data.length<=0 ? "Opps No Note Saved" : 
         data.map((d) => {

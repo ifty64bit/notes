@@ -4,7 +4,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 
 function Card({children, onClick, data, del}) {
     return (
-        <div className=' w-40 h-40 max-h-48 group bg-yellow-200 p-2 rounded-md shadow-md mr-4 mt-4 flex flex-col'>
+        <div className=' w-40 h-40 max-h-48 group bg-yellow-200 p-2 rounded-md shadow-md flex flex-col'>
             <div onClick={()=>onClick(data)}>
                 {children}
             </div>

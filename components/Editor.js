@@ -56,7 +56,7 @@ function Editor({data, openEditor}) {
 
     return (
         <div className='absolute inset-0 backdrop-blur-md z-10'>
-            <div className='mx-36 mt-12 bg-indigo-700 rounded-md p-8 '>
+            <div className=' mx-2 mt-2 sm:mx-36 sm:mt-12 bg-indigo-700 rounded-md p-2 sm:p-8 '>
                 <div>
                     <IconContext.Provider value={{ color:"white", size:"2rem", className: "cursor-pointer ml-auto" }}>
                         <span onClick={ ()=>openEditor(null) }><AiFillCloseCircle/></span>
